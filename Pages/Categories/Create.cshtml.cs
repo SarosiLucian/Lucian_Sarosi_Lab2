@@ -31,11 +31,11 @@ namespace Lucian_Sarosi_Lab2.Pages.Categories
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+         /* if (!ModelState.IsValid)
             {
                 return Page();
             }
-
+         */
             _context.Category.Add(Category);
             await _context.SaveChangesAsync();
 
