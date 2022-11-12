@@ -41,7 +41,9 @@ namespace Lucian_Sarosi_Lab2.Pages.Books
             }
             PopulateAssignedCategoryData(_context, Book);
             ViewData["PublisherID"] = new SelectList(_context.Publisher, "ID", "PublisherName");
-            
+
+            ViewData["AuthorID"] = new SelectList(_context.Author, "ID", "FullName");
+
             return Page();
         }
 

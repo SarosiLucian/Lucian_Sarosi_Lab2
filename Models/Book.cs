@@ -12,8 +12,8 @@ namespace Lucian_Sarosi_Lab2.Models
         [Display(Name = "Book Title")]
         [Required, StringLength(150, MinimumLength = 3)]
         public string Title { get; set; }
-        [RegularExpression(@"^[A-Z][a-z]+\s[A-Z][a-z]+$", ErrorMessage = "Numele autorului trebuie sa fie de forma 'Prenume Nume'"), Required, StringLength(50, MinimumLength = 3)]
-        public string Author { get; set; }
+    //    [RegularExpression(@"^[A-Z][a-z]+\s[A-Z][a-z]+$", ErrorMessage = "Numele autorului trebuie sa fie de forma 'Prenume Nume'"), Required, StringLength(50, MinimumLength = 3)]
+      //  public string Author { get; set; }
         
         [Range(1, 300)]
         [Column(TypeName = "decimal(6, 2)")]
@@ -21,6 +21,11 @@ namespace Lucian_Sarosi_Lab2.Models
 
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
+
+        public int? AuthorID { get; set; }
+
+        public Author? Author { get; set; }
+
 
         public int? PublisherID { get; set; }
         public Publisher? Publisher { get; set; } //navigation property

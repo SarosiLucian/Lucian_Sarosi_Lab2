@@ -23,6 +23,7 @@ namespace Lucian_Sarosi_Lab2.Pages.Books
         public IActionResult OnGet()
         {
             ViewData["PublisherID"] = new SelectList(_context.Publisher, "ID", "PublisherName");
+            ViewData["AuhtorID"] = new SelectList(_context.Author, "ID", "FullName");
             var book = new Book();
             book.BookCategories = new List<BookCategory>();
             PopulateAssignedCategoryData(_context, book);
