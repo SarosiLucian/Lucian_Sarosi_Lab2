@@ -4,6 +4,7 @@ using Lucian_Sarosi_Lab2.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lucian_Sarosi_Lab2.Migrations
 {
     [DbContext(typeof(Lucian_Sarosi_Lab2Context))]
-    partial class Lucian_Sarosi_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20221204164456_Borrowings")]
+    partial class Borrowings
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

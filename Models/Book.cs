@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 using System.Security.Policy;
+using Lucian_Sarosi_Lab2.Migrations;
 
 namespace Lucian_Sarosi_Lab2.Models
 {
@@ -31,6 +32,6 @@ namespace Lucian_Sarosi_Lab2.Models
         public Publisher? Publisher { get; set; } //navigation property
 
         public ICollection<BookCategory>? BookCategories { get; set; }
-    
+
     }
 }
