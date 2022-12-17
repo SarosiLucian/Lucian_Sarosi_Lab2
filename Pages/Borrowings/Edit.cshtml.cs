@@ -34,14 +34,16 @@ namespace Lucian_Sarosi_Lab2.Pages.Borrowings
                 return NotFound();
             }
 
-            var borrowing =  await _context.Borrowing.FirstOrDefaultAsync(m => m.ID == id);
+            var borrowing =  await _context.Borrowing
+                .Include(i => i.Member)
+                .Include(i => i.Book).ThenInclude(j => j.Author)
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (borrowing == null)
             {
                 return NotFound();
             }
             Borrowing = borrowing;
-           ViewData["BookID"] = new SelectList(bookDetails, "ID", "Details");
-           ViewData["MemberID"] = new SelectList(_context.Member, "ID", "FullName");
+
             return Page();
         }
 
