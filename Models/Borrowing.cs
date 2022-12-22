@@ -12,7 +12,6 @@ namespace Lucian_Sarosi_Lab2.Models
         public Book? Book { get; set; }
         [DataType(DataType.Date)] public DateTime ReturnDate { get; set; }
 
-        public ICollection<Borrowings>? Borrowings { get; set; }
 
     }
 }
